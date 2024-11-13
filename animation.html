@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Animation</title>
+    </head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            /* width: 80%; */
+            /* height: 80%; */
+            /* border: 1px dotted black; */
+            /* animation: move 2s infinite alternate; */
+            transition: scale 2s;
+            gap: 10px;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            justify-content: center;
+            align-items: center;
+            div {
+                border-radius: 0.7cap;
+                width: 100px;
+                height: 100px;
+                background-color:cornflowerblue;
+                transition: transform 0.8s ease 0.1s,background-color 2s ease;
+                
+            }
+            div:hover {
+                background-color:aqua ;
+                transform: rotate(30deg);
+                transform: scale(1.5);
+            }
+        }
+        @keyframes move {
+            0% {
+                /* transform: translateX(0); */
+                /* transform: rotate(0deg); */
+                transform: translateY(0);
+                animation-timing-function: cubic-bezier(0,0,0.2,1);
+            }
+            25% {
+                /* transform: translateX(30%); */
+            }
+            50% {
+                /* transform: translate(30%, 30%); */
+            }
+            75% {
+                /* transform: translateY(30%); */
+            }
+            100% {
+                /* transform: translateX(0); */
+                /* transform: rotate(360deg); */
+                transform: translateY(-25%);
+            }
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div></div>
+        </div>
+    </body>
+</html>

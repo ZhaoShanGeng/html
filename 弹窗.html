@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>弹窗示例</title>
+        <style>
+            body {
+                min-height: 100vh;
+                /* background: linear-gradient(45deg, #f3f4f6, #fff); */
+                background-image: url(public/example.png);
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #popup{
+                user-select: none;
+                display: none;
+                position: fixed;
+                left: 50%;
+                top: -100%;
+                transform: translateX(-50%);
+                padding: 20px 40px 20px 20px;
+                background-color: rgba(255, 255, 255, 0.6);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+                border-radius: 16px;
+                z-index: 1000;
+            }
+
+            .close-btn {
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                width: 10px;
+                height: 10px;
+                border: none;
+                background: none;
+                cursor: pointer;
+                color: #666;
+                font-size: 10px;
+                line-height: 20px;
+                padding: 0;
+            }
+
+            .close-btn:hover {
+                color: red;
+            }
+
+            @keyframes slideIn {
+                from {
+                    top: -100%;
+                }
+                to {
+                    top: 5%;
+                }
+            }
+
+            @keyframes slideOut {
+                from {
+                    top: 5%;
+                }
+                to {
+                    top: -100%;
+                }
+            }
+
+            #popup.show {
+                animation: slideIn 1.5s forwards;
+            }
+
+            #popup.hide {
+                animation: slideOut 1.5s forwards;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="popup">这是一个弹窗
+            <span class="close-btn">X</span>
+        </div>
+
+        <script>
+            window.onload = function () {
+                var popup = document.getElementById("popup");
+                popup.classList.add("show");
+                popup.style.display = "block";
+                setTimeout(function () {
+                    popup.classList.remove("show");
+                    popup.classList.add("hide");
+                    setTimeout(function () {
+                        popup.style.display = "none";
+                    }, 1000); // 等待动画结束后隐藏弹窗
+                }, 3000); // 3秒后开始隐藏弹窗
+            };
+            var clickBtn=document.querySelector(".close-btn");
+            clickBtn.addEventListener("click",function(){
+                popup.classList.add("hide");
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS基本入门</title>
+    </head>
+    <style>
+        @font-face {
+            font-family: "STHUPO";
+            src: url("public/fonts/STHUPO.TTF");
+        }
+        body {
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+        }
+        .title {
+            font-family: "STHUPO";
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: lighter;
+        }
+        .container {
+            box-shadow: 0px 7px 30px 0px rgba(100, 100, 111, 0.2);
+            box-sizing: border-box;
+            /*盒子模型*/
+            width: 80vw;/*vm视口宽度*/
+            height: 80vh;/*vh视口高度*/
+            margin-left: 10%;/*外边距*/
+            padding: 1% 3%; /*内边距，上下、左右, 上、右、下、左顺时针*/
+            background: color(srgb 255 255 255);
+            backdrop-filter: blur(10px) brightness(90%);
+            background-color: rgba(255, 255, 255, 0.67);
+            /* border-radius: 30px; */
+            border-radius: 12vh;
+            border:1px dashed black
+        }
+        h3 {
+            color: red;
+            vertical-align: middle;
+        }
+        .Seletor {
+            gap: 2rem; /* 设置元素间距 */
+            display: flex; /* 让元素水平排列 */
+            align-items: center; /* 让元素垂直居中 */
+        }
+        .classSeletor {
+            color: blue;
+        }
+        #idSeletor {
+            color: green;
+        }
+        .parent .child {
+            color: yellow;
+        }
+        .child {
+            color: purple;
+        }
+        .rgb {
+            color: rgb(255, 0, 0, 0.5);
+        }
+        .hex {
+            background-color: #8ec5fc;
+            color: #f9c1f9;
+            opacity: 0.5;
+        }
+    </style>
+    <body>
+        <h1 class="title">CSS基本入门</h1>
+        <div class="container">
+            <!--元素选择器、类选择器、id选择器-->
+            <div class="Seletor">
+                <h2>选择器</h2>
+                <h3>元素选择器</h3>
+                <h3 class="classSeletor">类选择器</h3>
+                <h3 id="idSeletor">id选择器</h3>
+            </div>
+
+            <!--层级关系-->
+            <h2>后代选择器</h2>
+            <div class="parent">
+                <div class="child">父级中的子级</div>
+            </div>
+            <div class="child">同类名但不在父级中的其他元素</div>
+            <!--颜色，RGB与HEX十六进制-->
+            <h4>颜色，RGB与HEX十六进制</h4>
+            <div class="rgb">RGB颜色</div>
+            <div class="hex">hex颜色</div>
+            <!-- Display布局 -->
+            <h2>Display布局</h2>
+            
+        </div>
+    </body>
+</html>

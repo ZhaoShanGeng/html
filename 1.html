@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        body{
+            background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%) ;
+            background-size: 100vmax 100vmax;
+        }
+    </style>
+    <body>
+        
+    </body>
+    <script>
+        //创建对象
+        let str='123Heloodjdskrfs'
+        let num=124434123
+        let bool1=true
+        let bool2=false
+
+        //修改对象
+        str='修改后的文字'
+        num=888
+        console.log(str,num,bool1,bool2)
+        console.log("Hello World!");
+
+        //创建对象组删除对象
+        let obj={
+            name:'测试',
+            age:18,
+            bool:true
+        }
+        // delete obj.age
+        console.log(obj)
+        console.log(obj.name,obj.age,obj.bool)
+
+        //创建数组与循环
+        let arr=[1,2,3,4,5,6,7,8,9,10]
+        arr[1]=100
+        arr.push(1000)
+        arr.unshift(0)
+        console.log(arr)
+        for(let i=0;i<arr.length;i++){
+            console.log(arr[i])
+        }
+        //函数
+        function add(a,b){
+            console.log('这是一个函数')
+            // console.log(a+b)
+            return a+b
+        }
+        add()
+        add()
+        add(1,5)
+        console.log(add(1,5))
+    </script>
+</html>
